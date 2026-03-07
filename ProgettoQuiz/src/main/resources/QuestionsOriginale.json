@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "text": "Qual è la capitale della Francia?",
+    "options": ["Lione", "Marsiglia", "Parigi", "Nizza"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 2,
+    "text": "Chi ha dipinto la 'Gioconda'?",
+    "options": ["Michelangelo", "Leonardo da Vinci", "Raffaello", "Donatello"],
+    "correctIndex": 1,
+    "points": 10
+  },
+  {
+    "id": 3,
+    "text": "Qual è il pianeta più grande del sistema solare?",
+    "options": ["Marte", "Saturno", "Giove", "Urano"],
+    "correctIndex": 2,
+    "points": 15
+  },
+  {
+    "id": 4,
+    "text": "In che anno è stata scoperta l'America?",
+    "options": ["1492", "1294", "1512", "1450"],
+    "correctIndex": 0,
+    "points": 10
+  },
+  {
+    "id": 5,
+    "text": "Qual è il simbolo chimico dell'oro?",
+    "options": ["Ag", "Fe", "Au", "Pb"],
+    "correctIndex": 2,
+    "points": 20
+  },
+  {
+    "id": 6,
+    "text": "Quanti continenti esistono sulla Terra?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 3,
+    "points": 10
+  },
+  {
+    "id": 7,
+    "text": "Chi è l'autore della 'Divina Commedia'?",
+    "options": ["Petrarca", "Boccaccio", "Dante Alighieri", "Leopardi"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 8,
+    "text": "Qual è l'oceano più profondo del mondo?",
+    "options": ["Oceano Atlantico", "Oceano Indiano", "Oceano Pacifico", "Oceano Artico"],
+    "correctIndex": 2,
+    "points": 15
+  },
+  {
+    "id": 9,
+    "text": "Qual è la lingua ufficiale del Brasile?",
+    "options": ["Spagnolo", "Portoghese", "Francese", "Inglese"],
+    "correctIndex": 1,
+    "points": 10
+  },
+  {
+    "id": 10,
+    "text": "Quante corde ha una chitarra classica?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 11,
+    "text": "Quale organo del corpo umano produce l'insulina?",
+    "options": ["Fegato", "Pancreas", "Reni", "Cuore"],
+    "correctIndex": 1,
+    "points": 20
+  },
+  {
+    "id": 12,
+    "text": "Qual è il metallo più leggero?",
+    "options": ["Alluminio", "Litio", "Magnesio", "Zinco"],
+    "correctIndex": 1,
+    "points": 25
+  },
+  {
+    "id": 13,
+    "text": "Chi è stato il primo uomo a camminare sulla Luna?",
+    "options": ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong", "John Glenn"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 14,
+    "text": "Qual è il fiume più lungo d'Italia?",
+    "options": ["Arno", "Tevere", "Po", "Adige"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 15,
+    "text": "In quale città si trova il Colosseo?",
+    "options": ["Napoli", "Milano", "Roma", "Firenze"],
+    "correctIndex": 2,
+    "points": 5
+  },
+  {
+    "id": 16,
+    "text": "Quale scienziato ha formulato la teoria della relatività?",
+    "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    "correctIndex": 1,
+    "points": 15
+  },
+  {
+    "id": 17,
+    "text": "Qual è l'animale terrestre più veloce?",
+    "options": ["Leone", "Ghepardo", "Antilope", "Cavallo"],
+    "correctIndex": 1,
+    "points": 10
+  },
+  {
+    "id": 18,
+    "text": "Quale gas respiriamo principalmente nell'aria?",
+    "options": ["Ossigeno", "Anidride Carbonica", "Azoto", "Idrogeno"],
+    "correctIndex": 2,
+    "points": 20
+  },
+  {
+    "id": 19,
+    "text": "Quanti giorni ci sono in un anno bisestile?",
+    "options": ["364", "365", "366", "367"],
+    "correctIndex": 2,
+    "points": 10
+  },
+  {
+    "id": 20,
+    "text": "Qual è l'opera più famosa di Alessandro Manzoni?",
+    "options": ["Il Fu Mattia Pascal", "I Promessi Sposi", "La Coscienza di Zeno", "Il Gattopardo"],
+    "correctIndex": 1,
+    "points": 10
+  }
+]

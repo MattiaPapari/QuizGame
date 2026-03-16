@@ -1,0 +1,13 @@
+services:
+  server-quiz:
+    build: .
+    container_name: server-quiz
+    ports:
+      - "1099:1099"
+    networks:
+      - quiz-net
+    restart: always
+
+networks:
+  quiz-net:
+    driver: bridge

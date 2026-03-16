@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "text": "Domanda Test?",
+    "options": ["A", "B", "C", "D"],
+    "correctIndex": 0,
+    "points": 10
+  }
+]

@@ -1,42 +1,81 @@
-RMI Quiz Master - Progetto di Sistemi Distribuiti 2026
-Un sistema di quiz multiplayer basato su Java RMI, che permette a più utenti di sfidarsi in tempo reale all'interno di diverse lobby.
+🏆 **RMI Quiz Master - Progetto di Sistemi Distribuiti 2026**
 
-🛠 Tecnologie Utilizzate
-Java 17+: Linguaggio principale.
+Un sistema di quiz multiplayer scalabile basato su Java RMI, progettato per gestire sfide in tempo reale tra più utenti sincronizzati all'interno di lobby dinamiche.
 
-Java RMI: Per la comunicazione tra oggetti remoti.
+🌟 **Caratteristiche Principali**
 
-Maven: Per la gestione delle dipendenze e il build.
+- Architettura Containerizzata: Il server è completamente isolato tramite Docker, garantendo portabilità e facilità di deploy.
 
-Jackson Databind: Per il parsing del file Questions.json.
+- CI/CD Pipeline: Integrazione continua tramite GitHub Actions che esegue build e test automatici ad ogni push.
 
-📂 Struttura del Progetto
-Server.java: Gestisce la logica delle lobby, i punteggi e la sincronizzazione delle risposte.
+- Sincronizzazione a Barriera: Logica di gioco sincronizzata; il server attende le risposte di tutti i partecipanti prima di procedere.
 
-Client.java: Interfaccia utente (CLI) e gestione delle callback per ricevere le domande.
+- Callback RMI Avanzate: Gestione bidirezionale delle notifiche dal server ai client in tempo reale.
 
-ServerInterface.java / ClientInterface.java: Interfacce remote per il protocollo RMI.
+- Bonus Velocità: Sistema di punteggio dinamico basato sul tempo di reazione del giocatore.
 
-Questions.json: Database delle domande in formato JSON.
+🛠 **Tech Stack**
 
-🚀 Come Avviare il Progetto
+- Java 21 (Amazon Corretto / Eclipse Temurin)
+
+- Maven (Gestione dipendenze e build automation)
+
+- Docker & Docker Compose (Containerizzazione e orchestrazione)
+
+- Jackson Databind (Parsing JSON per il database domande)
+
+- JUnit 5 (Unit testing per la logica delle lobby)
+
+📂 **Struttura del Progetto**
+
+- Server.java: Core engine; gestisce il registro RMI, le lobby e la sincronizzazione.
+
+- Client.java: Interfaccia CLI interattiva con gestione dei thread per l'input non bloccante.
+
+- Dockerfile: Configurazione multi-stage per generare un Fat-JAR ottimizzato.
+
+- .github/workflows/main.yml: Pipeline per il testing automatico su GitHub.
+
+🚀 **Come Avviare il Progetto**
+
 1. Prerequisiti
-Assicurati di avere Maven installato e che la porta 1099 sia libera sul tuo sistema.
+ - Docker Desktop installato e avviato.
+ - Java 17+ (se si desidera avviare il client manualmente).
 
-2. Compilazione
-Dalla cartella principale del progetto, compila il tutto con Maven:
+2. Avvio Rapido con Docker (Consigliato per il Server)
+   
+Dalla root del progetto, esegui il comando per buildare e avviare il server:
 
-3. Avvio del Server
-Esegui la classe Server. Questo avvierà automaticamente il rmiregistry sulla porta 1099.
+**docker-compose up --build**
 
-4. Avvio dei Client
-Puoi aprire più terminali per simulare diversi giocatori.
+Il server sarà in ascolto sulla porta 1099.
 
-🎮 Funzionalità Principali
-Sistema di Lobby: Creazione di nuove lobby o accesso a lobby esistenti tramite ID numerico.
+3. Avvio del Client
+   
+Apri uno o più terminali e avvia il client tramite IntelliJ o Maven:
 
-Sincronizzazione a Barriera: Il server attende che tutti i partecipanti attivi abbiano risposto prima di passare alla domanda successiva.
+**mvn exec:java -Dexec.mainClass="Client"**
 
-Bonus Velocità: Punti extra per chi risponde correttamente in meno di 5 secondi.
+**Nota Tecnica**: Il client è configurato per comunicare con il server su 127.0.0.1:1099. Per le callback da Docker a Host, assicurati che il parametro java.rmi.server.hostname nel main del Client corrisponda al tuo IP locale.
 
-Gestione Dinamica Client: Rimozione automatica dei client disconnessi per evitare lo stallo della partita.
+📡** Note sull'Architettura di Rete**
+
+Per permettere la comunicazione tra il container Docker (Linux) e il Client (Windows), il sistema utilizza:
+
+1. Port Forwarding: Mapping della porta 1099 tra host e container.
+
+2. Fixed Port RMI: L'oggetto remoto del server è esportato sulla porta 1099 fissa per evitare i blocchi dei firewall sui range di porte casuali.
+
+3. Local IP Callbacks: Il client comunica il proprio IP locale al server per permettere l'invio delle domande tramite callback.
+
+🧪 **Testing e Qualità**
+
+Il progetto include una suite di test JUnit che verifica:
+
+- Corretta creazione e univocità delle lobby.
+
+- Gestione dei login duplicati.
+
+- Logica di calcolo dei punteggi e bonus.
+
+Puoi vedere l'esito degli ultimi test direttamente nel tab **Actions** di questo repository GitHub.

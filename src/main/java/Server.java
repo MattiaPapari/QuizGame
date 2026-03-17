@@ -22,7 +22,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
     private Map<Integer, Boolean> lobbyStarted = new ConcurrentHashMap<>();
 
     public Server(String s) throws RemoteException {
-        super();
+        super(1099);
         name = s;
 
         try {

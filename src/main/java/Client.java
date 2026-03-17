@@ -11,7 +11,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface {
     private volatile boolean matchStarted = false;
 
     protected Client() throws RemoteException {
-        super();
+        super(0);
     }
 
     public void setCurrentLobbyId(int currentLobbyId) throws RemoteException {
@@ -94,8 +94,8 @@ public class Client extends UnicastRemoteObject implements ClientInterface {
 
 
     public static void main(String[] args) {
-        System.setProperty("java.rmi.server.hostname", "127.0.0.1");
-        String registryURL = "rmi://127.0.0.1/quizzer";
+        System.setProperty("java.rmi.server.hostname", "192.168.182.110");
+        String registryURL = "rmi://127.0.0.1:1099/quizzer";
         QuizCLI ui = new QuizCLI();
         int idLobby = 0;
 

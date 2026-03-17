@@ -9,8 +9,8 @@ RUN mvn clean package
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-# Copiamo il JAR generato (controlla il nome nel tuo pom.xml)
-COPY --from=build /app/target/*.jar quiz-server.jar
+# Copiamo il JAR generato
+COPY --from=build /app/target/quiz-server.jar quiz-server.jar
 # Copiamo il database delle domande
 COPY src/main/resources/Questions.json Questions.json
 

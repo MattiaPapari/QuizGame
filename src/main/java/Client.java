@@ -92,9 +92,24 @@ public class Client extends UnicastRemoteObject implements ClientInterface {
         System.out.println(message);
     }
 
+    public static String getAutoDiscoveredIP(){
+        String myLocalIp = "192.168.1.6"; //Ip personale da controllare in ipconfig
+        try (java.net.DatagramSocket socket = new java.net.DatagramSocket()) {
+            // Simuliamo una connessione verso Google DNS per forzare il routing
+            socket.connect(java.net.InetAddress.getByName("8.8.8.8"), 10002);
+            myLocalIp = socket.getLocalAddress().getHostAddress();
+        } catch (Exception e) {
+            System.err.println("Impossibile rilevare l'IP automaticamente. Uso localhost.");
+        }
+
+        return myLocalIp;
+    }
+
 
     public static void main(String[] args) {
-        System.setProperty("java.rmi.server.hostname", "192.168.182.110");
+        String myLocalIp = getAutoDiscoveredIP();
+
+        System.setProperty("java.rmi.server.hostname", myLocalIp);
         String registryURL = "rmi://127.0.0.1:1099/quizzer";
         QuizCLI ui = new QuizCLI();
         int idLobby = 0;

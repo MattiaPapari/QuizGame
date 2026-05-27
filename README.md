@@ -58,7 +58,7 @@ Apri uno o più terminali e avvia il client tramite IntelliJ o Maven:
 
 **Nota Tecnica**: Il client è configurato per comunicare con il server su 127.0.0.1:1099. Per le callback da Docker a Host, assicurati che il parametro java.rmi.server.hostname nel main del Client corrisponda al tuo IP locale.
 
-📡** Note sull'Architettura di Rete**
+📡**Note sull'Architettura di Rete**
 
 Per permettere la comunicazione tra il container Docker (Linux) e il Client (Windows), il sistema utilizza:
 
